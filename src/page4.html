@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="./assets/styles/main.scss"><!-- do not remove this line! -->
+    <title>Jornadas de cocina</title>
+  </head>
+  <body class="main-page4-container-query">
+    
+    
+    <header>
+        <include src="./views/navigation.html"></include>
+    </header>
+    <main class="w-80 main-page4">
+      <div class="container-fluid px-1 py-5 mx-auto form-container">
+        <div class="row d-flex justify-content-center">
+          <div class="col-xl-7 col-lg-8 col-md-9 col-11">
+            
+            <form>
+
+              <fieldset class="border rounded p-3 --bs-secondary-bg --bs-secondary-bg-rgb">
+                <legend>Datos personales</legend>
+                <div class="mb-3">
+                  <label for="nombre" class="form-label">Nombre <abbr title="campo obligatorio">*</abbr></label>
+                  <input type="text" class="form-control" id="nombre" aria-describedby="nombreHelp" required>
+                  <div id="nombreHelp" class="form-text">Introduce tu nombre</div>
+                </div>
+                <div class="mb-3">
+                  <label for="apellidos" class="form-label">Apellidos <abbr title="campo obligatorio">*</abbr></label>
+                  <input type="text" class="form-control" id="apellidos" aria-describedby="apellidosHelp" required>
+                  <div id="apellidosHelp" class="form-text">Introduce tus apellidos</div>
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">Correo electrónico <abbr title="campo obligatorio">*</abbr></label>
+                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>
+                  <div id="emailHelp" class="form-text">Escribe tu correo electrónico. No compartiremos tu correo electrónico con nadie.</div>
+                </div>
+              </fieldset>
+
+              <fieldset class="border rounded p-3">
+                <legend>Cursos</legend>
+                <div class="mb-3">
+                  <label for="category">Cursos disponibles:  <abbr title="campo obligatorio">*</abbr></label>
+                    <select class="form-select mt-3" name="category" id="category" required>
+                      <option selected disabled value="">Selecciona un curso</option>
+                      <option value="HenryWin">Henry Win - 20/01/2026</option>
+                      <option value="ArantxaBilbao">Arantxa Bilbao - 20/02/2026</option>
+                      <option value="MarcGarcia">Marc García - 15/03/2026</option>
+                      <option value="MartaLopez">Marta López - 23/04/2026</option>
+                      <option value="EnricCasanova">Enric Casanova - 07/05/2026</option>
+                      <option value="PabloHerrero">Pablo Herrero - 03/06/2026</option>
+                    </select>
+                </div>
+              </fieldset>
+              
+              <div class="mb-3 form-check">
+                <label class="form-check-label" for="exampleCheck1">¿Quieres recibir información de nuestra Newsletter?</label>
+                <input type="checkbox" class="form-check-input border-1" id="exampleCheck1">
+              </div>
+
+              <button type="submit" class="btn btn-primary border-2">Enviar</button>
+            
+            </form>
+            
+          </div>
+        </div>
+      </div>
+
+    </main>
+
+    <include src="./views/footer.html"></include>
+    <script type="module" src="./assets/scripts/main.js"></script><!-- do not remove this line! -->
+  
+  </body>
+</html>
+

@@ -1,0 +1,160 @@
+/********************************/
+/************ PAGE 3 ************/
+/********************************/
+@use "../variables";
+@layer base, layout, components, responsive;
+
+
+@layer base {
+  article {
+    inline-size: 80%;
+    margin: 0 auto;
+  }
+
+  h3:has(~ p) {
+    display: inline-block;
+    padding-block-end: .2rem;
+    border-block-end: 1px solid variables.opacity-color(variables.$primary-color-2, .5); //rgba(39, 94, 82, .5)
+  }
+
+  ol:has(li) {
+    padding: 2rem 3rem 2rem 0;
+    list-style: none;
+    counter-reset: item__counter;
+    border-block-start: 2px solid variables.$primary-color-2;
+    border-block-end: 2px solid variables.$primary-color-2;
+  }
+
+  ol li {
+    position: relative;
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    margin-block-end: 1rem;
+  }
+
+  ol li::before {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    inline-size: 2.5rem;
+    block-size: 2.5rem;
+    font-size: 1.3em;
+    line-height: 1;
+    color: black;
+    content: counter(item__counter);
+    counter-increment: item__counter;
+    background-color: rgb(53 117 103);
+    border: 1px solid black;
+    border-radius: 50%;
+  }
+
+  .img-fluid {
+    max-inline-size: 100%;
+    block-size: auto;
+    padding-block-end: 1.5rem;
+  }
+
+}
+
+
+@layer layout {
+  .distribution {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    padding: clamp(1rem, 5vw, 2.5rem) 0;
+  }
+
+  .distribution__right {
+    flex: 0 0 70%;
+  }
+
+  .distribution__left {
+    flex: 0 0 30%;
+
+    h2 {
+      font-weight: 400;
+    }
+  }
+
+  
+  .distribution-container-query {
+    container-name: distributionCQ;
+    container-type: inline-size;
+  }
+    
+  .main-page3 :is(h1, h2) {
+    margin-block-end: 1rem;
+    color: #3a424b;
+  }
+}
+
+
+@layer components {
+  .hero-page3__title,
+  .hero-page3__subtitle {
+    position: absolute;
+    inset-inline-start: 50%;
+    box-sizing: border-box;
+    display: inline-block;
+    max-inline-size: 100%;
+    padding: 1rem;
+    text-align: center;
+    background-color: variables.opacity-color(variables.$base-color-black, .7); //rgba(0, 0, 0, .7);
+    transform: translate(-50%, -50%);
+  }
+
+  .hero-page3__title {
+    inset-block-start: 50%;
+    font-size: clamp(1.75rem, 5vw, 3rem);
+    color: variables.$base-color-white;
+  }
+
+  .hero-page3__subtitle {
+    inset-block-start: 85%;
+    font-size: clamp(1rem, 5vw, 1.5rem);
+    color: variables.$primary-color-2;
+  }
+
+  .hero-page3 :where(h1, p, span) {
+    letter-spacing: .08rem;
+  }
+}
+
+/********************************/
+/********** RESPONSIVE **********/
+/********************************/
+
+@layer responsive {
+  @container distributionCQ (max-width: 768px) {
+    .distribution {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  @media (max-width: 1200px) {
+    .hero-page3__title {
+      inset-block-start: 35%;
+    }
+    .hero-page3__subtitle {
+      inset-block-start: 85%;
+    }
+  }
+
+  @media (max-width: 768px) { 
+    article {
+      inline-size: 100%;
+      margin: 0;
+    }
+
+    ol:has(li) {
+      padding: 2rem 0;
+    }
+
+  }
+}
+
+

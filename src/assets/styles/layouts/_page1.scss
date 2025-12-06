@@ -1,0 +1,146 @@
+/************************************/
+/********** GRID - PORTADA **********/
+/************************************/
+@use "../variables";
+@layer base, layoutDefault, layoutGrid;
+
+
+@layer base {
+  .hero-portada__container {
+    display: flex;
+    flex-direction: column;
+    block-size: 100%;
+  }
+}
+
+
+/* Diseño alternativo para los navegadores que no soporten CSS Grid */
+@layer layoutDefault {
+  .hero-portada__container-poster {
+    flex: 1;
+    padding: 1rem;
+  }
+
+  .info__container {
+    inline-size: fit-content;
+    padding: 1rem;
+    margin: 1rem auto;
+    background-color: variables.opacity-color(variables.$base-color-black, .5); //rgb(0 0 0 / .5)
+    
+    .grid-item__title {
+      margin: 1rem 0;
+      color: variables.$secondary-color-1;
+      text-decoration: underline;
+      text-decoration-thickness: .2rem;
+      text-decoration-color: variables.$primary-color-2;
+    }
+
+    .grid-item__date {
+      color: variables.$base-color-white;
+    }
+      
+  }
+
+}
+
+/* Diseño para los navegadores que soportan CSS Grid */
+@layer layoutGrid {
+  @supports (display: grid) {
+
+    .grid-container-query {
+      container-name: gCQ;
+      container-type: inline-size;
+    }
+
+    /* Contenedor GRID */
+    .info-grid-container {
+      z-index: 1;
+      display: grid;
+      grid-template-areas: ". c1 . c2 . c3"
+        "c4 . c5 . c6 .";
+      
+      grid-template-columns: repeat(6, 15%);
+
+      gap: .3rem;
+
+      justify-content: center;
+      max-inline-size: 1200px;
+      
+      padding: 1.25rem;
+      margin: 0 auto;
+
+      background-color: transparent;
+    }
+
+    .grid-item {
+      
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      aspect-ratio: 1/1;
+      
+      padding: 1rem;
+      
+      font-weight: bold;
+       
+      background-color: variables.opacity-color(variables.$primary-color-2, .85); //rgba(39, 94, 82, .85); 
+      border: 2px solid variables.opacity-color(variables.$primary-color-2, 1.2); //rgba(39, 94, 82, 1.2); 
+
+    }
+
+    /***** Container Query *****/
+    @container gCQ (min-width: 769px) and (max-width: 1300px) {
+      .info-grid-container {
+        inset-block-start: 8.5rem;
+        inset-inline: 0;
+        
+        grid-template-areas: ". ."
+          "c1 c2" 
+          "c3 c4"
+          "c5 c6"
+          ". .";
+        grid-template-columns: repeat(2, 50%);
+        gap: 2rem;
+        justify-content: center;
+          
+        padding: 2rem;
+      }
+
+      .grid-item {
+        aspect-ratio: auto;
+      }
+    }
+        
+    /***** Container Query *****/ 
+    @container gCQ (max-width: 768px) {
+      .info-grid-container {
+        grid-template-areas: "c1" 
+          "c2"
+          "c3" 
+          "c4"
+          "c5" 
+          "c6";
+        grid-template-columns: repeat(1, 100%);
+      }
+      .grid-item {
+        aspect-ratio: auto;
+      }
+    }
+
+    #c1 { grid-area: c1;
+    }
+    #c2 { grid-area: c2;
+    }
+    #c3 { grid-area: c3;
+    }
+    #c4 { grid-area: c4;
+    }
+    #c5 { grid-area: c5;
+    }
+    #c6 { grid-area: c6;
+    }
+
+  } //fin de @supports
+}

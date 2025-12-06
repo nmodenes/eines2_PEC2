@@ -1,0 +1,31 @@
+{
+  "extends": [
+    "stylelint-config-recommended-scss",
+    "stylelint-config-recess-order"
+  ],
+  "plugins": [
+    "@stylistic/stylelint-plugin",
+    "stylelint-use-logical"
+  ],
+  "rules": {
+    "selector-class-pattern": "^.[a-z]([a-z0-9-]+)?(__([a-z0-9]+-?)+)?(--([a-z0-9]+-?)+){0,2}$",
+    "color-hex-length": "short",
+    "length-zero-no-unit": true,
+    "selector-attribute-quotes": "always",
+    "color-function-notation": "modern",
+    "color-function-alias-notation": "without-alpha",
+
+    "@stylistic/number-leading-zero": "never",
+    "@stylistic/color-hex-case": "lower",
+    "@stylistic/value-list-comma-space-after": "always",
+    "@stylistic/declaration-block-trailing-semicolon": "always",
+    "@stylistic/declaration-block-semicolon-newline-after": "always",
+    "@stylistic/declaration-colon-space-after": "always",
+    "@stylistic/block-closing-brace-newline-before": "always",
+    "@stylistic/block-opening-brace-space-before": "always",
+    "@stylistic/selector-list-comma-newline-after": "always",
+    "@stylistic/indentation": 2,
+
+    "csstools/use-logical": "always"
+  }
+}

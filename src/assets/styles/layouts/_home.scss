@@ -1,0 +1,152 @@
+@use "../variables";
+
+@layer reset, bootstrap, utilities;
+
+@layer bootstrap {
+  
+  // Cambia el padding del botón en el eje x
+  $btn-padding-x: 2rem;
+
+  // Cambia la altura de la línea en los componentes de formulario de tipo input
+  $input-btn-line-height: 2;
+
+  // Cambia el color primario y todos los que derivan de este de azul por defecto a verde
+  $primary: #275e52;
+
+  // Cambia el tamaño del texto de los enlaces de la barra de navegación
+  $nav-link-font-size: 1.25rem;
+
+  // Cambia el grosor del texto de los enlaces de la barra de navegación
+  $nav-link-font-weight: bold;
+
+  // Cambia el color del borde de los elementos (azul) a unos de los colores del diseño base verde
+  $border-color: #275e52;
+
+  // Cambia el grosor del borde de los elementos (1px) a 0.75rem;
+  $border-width: .17rem;
+
+  @import "bootstrap/scss/bootstrap";
+}
+
+@layer reset {
+  * {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+  }
+}
+
+@layer utilities {
+
+  /* Creamos un conjunto de selectores que aplican una anchura
+     determinada en función de los valores de la variable $width
+     definida en _variables.scss (w-10, w-20, ... w-100). Bootstrap
+     tiene una utilidad similar, pero solo ofrece los valores 
+     (w-25, w-50, w-75, w100) 
+  */
+  @each $key, $value in variables.$widths {
+    .w-#{$key} {
+      @include variables.width(#{$value});
+    }
+  }
+
+}
+
+
+
+/********** GENERAL **********/
+
+/****************************/
+/********** FOOTER **********/
+/****************************/
+
+.footer {
+  @include variables.banner(top, variables.$footer-background-color, variables.$base-color-white); 
+  
+  /* Habilitar el contenedor para container queries */
+  .footer__container {
+    padding-block-start: 1rem;
+
+    container-name: footer;
+    container-type: inline-size;
+    border-block-start: .17rem solid variables.$primary-color-2;
+  }
+
+  /* Estado por defecto (pantallas >1200px) */
+  .footer__logo {
+    display: block;
+  }
+}
+
+/***** Container Query *****/
+@container footer (max-width: 850px) {
+  .footer .footer__logo {
+    display: none;
+  }
+}
+
+/**************************/
+/********** BODY **********/
+/**************************/
+html,
+body {
+  block-size: 100%;
+}
+  
+
+body {
+  display: flex;
+  flex-direction: column;
+  font-family: variables.$font-family-sans-serif;
+  line-height: 1.6;
+  background-color: variables.$main-background-color;
+}
+
+/**************************/
+/********** MAIN **********/
+/**************************/
+main {
+  flex: 1;
+}
+
+
+/******************************/
+/******* HERO IMAGE ***********/
+/******************************/
+.hero-portada,
+.hero-page3 {
+  position: relative;
+  display: inline-block;
+  inline-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.hero-portada {
+  background-image: url(../images/hero-louis-hansel-unsplash.jpg);
+}
+
+.hero-page3 {
+  block-size: 24rem;
+  background-image: url(../images/hero-rowen-smith-unsplash.jpg);
+}
+
+
+
+
+
+
+
+ 
+  
+  
+  
+
+
+
+
+
+
+
+

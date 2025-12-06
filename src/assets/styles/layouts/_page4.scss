@@ -1,0 +1,51 @@
+/********************************/
+/************ PAGE 4 ************/
+/********************************/
+
+.form-container {
+  
+  // Represents a percentage of the height of the query container. 1cqh is 1% of the query container's height.
+  margin: 2cqh 0;
+
+  background-color: lab(100 0 0); //#fff;
+
+  // CQW: Represents a percentage of the width of the query container. 1cqw is 1% of the query container's width.
+  border-radius: 2cqw;
+
+  /* Las abreviaturas de "*" que indican campo obligatorio, 
+      aparecerán en color rojo en el formulario */
+  abbr {
+    font-size: 1.2rem;
+    color: color(display-p3 .464 .129 .110); //#811616
+  }
+
+  fieldset {
+    margin-block-end: 3cqh;
+    background-color: lab(97.28 -.03 2.15 / .7); //rgba(249, 247, 243, .7); 
+    border: 3rem solid lab(36.07 -21.44 1.41); //rgba(39, 94, 82);
+
+    legend {
+      text-decoration: underline;
+      text-decoration-thickness: .2rem;
+      text-decoration-color: hwb(0 9% 49%); //#811616
+    }
+
+  }
+
+}
+
+/***** Container Query *****/
+.main-page4-container-query {
+  container-name: main-page4__CQ;
+  container-type: inline-size;
+}
+
+@container main-page4__CQ (max-width: 768px) {
+  .main-page4 {
+    inline-size: 100%;
+    margin: 0 auto;
+  }
+  
+}
+  
+
