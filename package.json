@@ -54,6 +54,7 @@
   "dependencies": {
     "@fortawesome/fontawesome-free": "^7.0.1",
     "@popperjs/core": "^2.11.8",
-    "bootstrap": "^5.3.8"
+    "bootstrap": "^5.3.8",
+    "hover.css": "^2.3.2"
   }
 }

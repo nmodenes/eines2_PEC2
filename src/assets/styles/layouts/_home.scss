@@ -109,6 +109,15 @@ main {
   flex: 1;
 }
 
+/****************************/
+/********** HEADER **********/
+/****************************/
+/* Clase de hover.css para cambiar el color de la animación de los enlaces en 
+   la barra de navegación*/
+.hvr-underline-from-center::before {
+  background: variables.$primary-color-2;
+}
+
 
 /******************************/
 /******* HERO IMAGE ***********/
