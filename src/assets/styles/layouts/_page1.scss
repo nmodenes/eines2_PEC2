@@ -91,7 +91,7 @@
     }
 
     /***** Container Query *****/
-    @container gCQ (min-width: 769px) and (max-width: 1300px) {
+    @container gCQ (min-width: 751px) and (max-width: 1200px) {
       .info-grid-container {
         inset-block-start: 8.5rem;
         inset-inline: 0;
@@ -114,7 +114,7 @@
     }
         
     /***** Container Query *****/ 
-    @container gCQ (max-width: 768px) {
+    @container gCQ (max-width: 750px) {
       .info-grid-container {
         grid-template-areas: "c1" 
           "c2"

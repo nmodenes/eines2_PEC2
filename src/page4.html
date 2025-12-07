@@ -18,7 +18,7 @@
         <div class="row d-flex justify-content-center">
           <div class="col-xl-7 col-lg-8 col-md-9 col-11">
             
-            <form>
+            <form class="needs-validation" novalidate>
 
               <fieldset class="border rounded p-3 --bs-secondary-bg --bs-secondary-bg-rgb">
                 <legend>Datos personales</legend>
@@ -26,16 +26,19 @@
                   <label for="nombre" class="form-label">Nombre <abbr title="campo obligatorio">*</abbr></label>
                   <input type="text" class="form-control" id="nombre" aria-describedby="nombreHelp" required>
                   <div id="nombreHelp" class="form-text">Introduce tu nombre</div>
+                  <div class="invalid-feedback">Este campo es obligatorio.</div>
                 </div>
                 <div class="mb-3">
                   <label for="apellidos" class="form-label">Apellidos <abbr title="campo obligatorio">*</abbr></label>
                   <input type="text" class="form-control" id="apellidos" aria-describedby="apellidosHelp" required>
                   <div id="apellidosHelp" class="form-text">Introduce tus apellidos</div>
+                  <div class="invalid-feedback">Este campo es obligatorio.</div>
                 </div>
                 <div class="mb-3">
                   <label for="exampleInputEmail1" class="form-label">Correo electrónico <abbr title="campo obligatorio">*</abbr></label>
                   <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>
                   <div id="emailHelp" class="form-text">Escribe tu correo electrónico. No compartiremos tu correo electrónico con nadie.</div>
+                  <div class="invalid-feedback">Introduce un correo electrónico válido.</div>
                 </div>
               </fieldset>
 
@@ -52,6 +55,7 @@
                       <option value="EnricCasanova">Enric Casanova - 07/05/2026</option>
                       <option value="PabloHerrero">Pablo Herrero - 03/06/2026</option>
                     </select>
+                    <div class="invalid-feedback">Debes seleccionar un curso.</div>
                 </div>
               </fieldset>
               
@@ -60,7 +64,7 @@
                 <input type="checkbox" class="form-check-input border-1" id="exampleCheck1">
               </div>
 
-              <button type="submit" class="btn btn-primary border-2">Enviar</button>
+              <button type="submit" class="btn btn-primary border-2" aria-label="Enviar formulario">Enviar</button>
             
             </form>
             
